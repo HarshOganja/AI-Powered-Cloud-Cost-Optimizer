@@ -38,7 +38,6 @@ Extract from this description:
         "Authorization": f"Bearer {HF_API_KEY}",
         "Content-Type": "application/json"
     }
-
     payload = {
         "model": MODEL_ID,
         "messages": [
@@ -56,8 +55,6 @@ Extract from this description:
 
     result = response.json()
     raw_output = result["choices"][0]["message"]["content"]
-
-    # Extract JSON safely
     try:
         json_start = raw_output.index("{")
         json_end = raw_output.rindex("}") + 1
