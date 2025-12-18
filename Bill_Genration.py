@@ -34,15 +34,40 @@ You are an AI that generates CLEAN, REALISTIC, SYNTHETIC cloud billing data.
 
 ================= SERVICE GENERATION RULES =================
 - Generate EXACTLY ONE billing record per tech_stack item
-- DO NOT invent additional services
-- DO NOT add CDN, DNS, Lambda, Backup, Security, etc. unless explicitly present
+- PLUS generate EXACTLY TWO (2) additional services
+- Additional services MUST be reasonable baseline infrastructure
+- Additional services MUST be derived from non_functional_requirements
+- DO NOT invent unrelated services
+- DO NOT add CDN, DNS, Lambda, AI, or advanced services
 - EACH service must appear ONLY ONCE
 - ONE billing record = ONE clear responsibility
 ===========================================================
+
+================= ALLOWED ADDITIONAL SERVICES =================
+You may ONLY choose from this list for the 2 extra services:
+- logging
+- load_balancing
+- backup
+- basic_security
+- caching
+- monitoring (only if not already present)
+===============================================================
+
+================= BUDGET REALISM RULES =================
+- Monthly budget is given in the project profile
+- TOTAL monthly cost MUST fall between:
+    70% and 120% of the stated budget
+- It MAY be under or over budget, but must remain realistic
+- No single service should exceed 50% of the total cost
+- Costs should reflect typical small-to-mid scale production usage
+========================================================
+
 ================= FIELD MAPPING RULES =================
-- "serves" MUST exactly match a key from "tech_stack"
+- "serves" MUST be:
+  - a tech_stack key OR
+  - one of the additional service names exactly as listed above
 - "desc" must clearly explain what that service does
-- Costs must be realistic and respect the monthly budget
+- Costs must be realistic, balanced, and budget-aware
 =======================================================
 
 ================= REQUIRED JSON STRUCTURE =================
@@ -65,6 +90,8 @@ Each object in the array MUST follow this schema:
 FINAL VALIDATION CHECK (MANDATORY):
 - Provider rules strictly followed
 - One service per tech_stack item
+- Exactly TWO additional services included
+- Total cost is between 70%–120% of budget
 - No duplicated services
 - No duplicated keys
 - Valid JSON array ONLY
@@ -74,6 +101,8 @@ Project profile:
 
 Output ONLY the JSON array.
 """
+
+
 
     headers = {
         "Authorization": f"Bearer {HF_API_KEY}",
