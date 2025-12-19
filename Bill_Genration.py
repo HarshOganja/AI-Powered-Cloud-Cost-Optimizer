@@ -4,7 +4,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-
+file="Response_json/Billing_Generation.json"
 HF_API_KEY = os.getenv("HF_API_KEY")
 MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 API_URL = "https://router.huggingface.co/v1/chat/completions"
@@ -118,7 +118,11 @@ Output ONLY the JSON array.
 
     response = requests.post(API_URL, headers=headers, json=payload)
     response.raise_for_status()
-
+    if os.path.exists(file):
+        os.remove(file)
+    with open(file, 'w') as f:
+        json.dump(json.loads(response.json()["choices"][0]["message"]["content"]), f,indent=4)
+        
     raw_output = response.json()["choices"][0]["message"]["content"]
 
     try:

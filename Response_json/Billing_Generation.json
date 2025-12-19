@@ -1,0 +1,74 @@
+[
+    {
+        "month": "2024-07",
+        "service": "PostgreSQL",
+        "resource_id": "pg-12345",
+        "region": "us-east-1",
+        "usage_type": "hours",
+        "usage_quantity": 720,
+        "unit": "hours",
+        "cost_inr": 15000,
+        "serves": "database",
+        "desc": "PostgreSQL database instance for storing app data"
+    },
+    {
+        "month": "2024-07",
+        "service": "Node.js",
+        "resource_id": "node-67890",
+        "region": "us-east-1",
+        "usage_type": "hours",
+        "usage_quantity": 720,
+        "unit": "hours",
+        "cost_inr": 10000,
+        "serves": "backend",
+        "desc": "Node.js server instance for handling app requests"
+    },
+    {
+        "month": "2024-07",
+        "service": "object storage",
+        "resource_id": "os-34567",
+        "region": "us-east-1",
+        "usage_type": "GB",
+        "usage_quantity": 100,
+        "unit": "GB",
+        "cost_inr": 5000,
+        "serves": "image_storage",
+        "desc": "Object storage for storing app images"
+    },
+    {
+        "month": "2024-07",
+        "service": "basic analytics",
+        "resource_id": "ba-90123",
+        "region": "us-east-1",
+        "usage_type": "hours",
+        "usage_quantity": 720,
+        "unit": "hours",
+        "cost_inr": 2000,
+        "serves": "analytics",
+        "desc": "Basic analytics for tracking app usage"
+    },
+    {
+        "month": "2024-07",
+        "service": "logging",
+        "resource_id": "log-45678",
+        "region": "us-east-1",
+        "usage_type": "GB",
+        "usage_quantity": 10,
+        "unit": "GB",
+        "cost_inr": 1000,
+        "serves": "logging",
+        "desc": "Logging service for monitoring app logs"
+    },
+    {
+        "month": "2024-07",
+        "service": "load_balancing",
+        "resource_id": "lb-23456",
+        "region": "us-east-1",
+        "usage_type": "hours",
+        "usage_quantity": 720,
+        "unit": "hours",
+        "cost_inr": 3000,
+        "serves": "load_balancing",
+        "desc": "Load balancing service for distributing app traffic"
+    }
+]

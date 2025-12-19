@@ -6,7 +6,7 @@ import json
 HF_API_KEY = os.getenv("HF_API_KEY")
 MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 API_URL = "https://router.huggingface.co/v1/chat/completions"
-
+file="Response_json/Recommendation.json"
 def generate_llm_recommendations(project_profile, billing_records, cost_analysis):
     prompt = f"""
 You are an AI system that generates CLOUD COST OPTIMIZATION RECOMMENDATIONS.
@@ -84,9 +84,6 @@ FINAL CHECK BEFORE RESPONDING:
 
 RESPOND WITH JSON ONLY.
 """
-
-
-
     headers = {
         "Authorization": f"Bearer {HF_API_KEY}",
         "Content-Type": "application/json"
@@ -102,10 +99,12 @@ RESPOND WITH JSON ONLY.
         "temperature": 0.3,
         "max_tokens": 1500
     }
-
     response = requests.post(API_URL, headers=headers, json=payload)
     response.raise_for_status()
-
+    if os.path.exists(file):
+        os.remove(file)
+    with open(file, 'w') as f:
+        json.dump(json.loads(response.json()["choices"][0]["message"]["content"]), f,indent=4)
     data = response.json()
 
     raw_text = data["choices"][0]["message"]["content"]
