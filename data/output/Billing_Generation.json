@@ -9,7 +9,7 @@
         "unit": "hours",
         "cost_inr": 15000,
         "serves": "database",
-        "desc": "PostgreSQL database instance for storing app data"
+        "desc": "Relational database for storing user data and orders"
     },
     {
         "month": "2024-07",
@@ -19,56 +19,56 @@
         "usage_type": "hours",
         "usage_quantity": 720,
         "unit": "hours",
-        "cost_inr": 10000,
+        "cost_inr": 12000,
         "serves": "backend",
-        "desc": "Node.js server instance for handling app requests"
+        "desc": "Serverless Node.js environment for handling API requests"
     },
     {
         "month": "2024-07",
-        "service": "object storage",
-        "resource_id": "os-34567",
+        "service": "Object Storage",
+        "resource_id": "s3-abcde",
         "region": "us-east-1",
         "usage_type": "GB",
         "usage_quantity": 100,
         "unit": "GB",
         "cost_inr": 5000,
         "serves": "image_storage",
-        "desc": "Object storage for storing app images"
+        "desc": "Object storage for storing images of menu items"
     },
     {
         "month": "2024-07",
-        "service": "basic analytics",
-        "resource_id": "ba-90123",
+        "service": "Basic Analytics",
+        "resource_id": "ga-xyz",
         "region": "us-east-1",
-        "usage_type": "hours",
-        "usage_quantity": 720,
-        "unit": "hours",
-        "cost_inr": 2000,
+        "usage_type": "events",
+        "usage_quantity": 100000,
+        "unit": "events",
+        "cost_inr": 3000,
         "serves": "analytics",
-        "desc": "Basic analytics for tracking app usage"
+        "desc": "Basic analytics for tracking user behavior and app performance"
     },
     {
         "month": "2024-07",
-        "service": "logging",
-        "resource_id": "log-45678",
+        "service": "Logging",
+        "resource_id": "log-123",
         "region": "us-east-1",
         "usage_type": "GB",
         "usage_quantity": 10,
         "unit": "GB",
         "cost_inr": 1000,
         "serves": "logging",
-        "desc": "Logging service for monitoring app logs"
+        "desc": "Centralized logging for monitoring app performance and errors"
     },
     {
         "month": "2024-07",
-        "service": "load_balancing",
-        "resource_id": "lb-23456",
+        "service": "Load Balancing",
+        "resource_id": "lb-456",
         "region": "us-east-1",
         "usage_type": "hours",
         "usage_quantity": 720,
         "unit": "hours",
-        "cost_inr": 3000,
+        "cost_inr": 2000,
         "serves": "load_balancing",
-        "desc": "Load balancing service for distributing app traffic"
+        "desc": "Load balancing for distributing traffic across multiple instances"
     }
 ]

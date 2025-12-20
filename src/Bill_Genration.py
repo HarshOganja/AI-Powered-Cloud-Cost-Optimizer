@@ -4,7 +4,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-file="Response_json/Billing_Generation.json"
+file="data/output/Billing_Generation.json"
 HF_API_KEY = os.getenv("HF_API_KEY")
 MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 API_URL = "https://router.huggingface.co/v1/chat/completions"

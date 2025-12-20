@@ -1,0 +1,274 @@
+{
+    "project_profile": {
+        "name": "Food Delivery App",
+        "budget_inr_per_month": 50000,
+        "description": "We are building a food delivery app for 10,000 users per month.",
+        "tech_stack": {
+            "backend": "Node.js",
+            "database": "PostgreSQL",
+            "image_storage": "object storage",
+            "monitoring": "monitoring",
+            "analytics": "basic analytics"
+        },
+        "non_functional_requirements": [
+            "scalability",
+            "cost efficiency",
+            "uptime monitoring"
+        ]
+    },
+    "billing": [
+        {
+            "month": "2024-07",
+            "service": "PostgreSQL",
+            "resource_id": "pg-12345",
+            "region": "us-east-1",
+            "usage_type": "hours",
+            "usage_quantity": 720,
+            "unit": "hours",
+            "cost_inr": 15000,
+            "serves": "database",
+            "desc": "Relational database for storing user data and orders"
+        },
+        {
+            "month": "2024-07",
+            "service": "Node.js",
+            "resource_id": "node-67890",
+            "region": "us-east-1",
+            "usage_type": "hours",
+            "usage_quantity": 720,
+            "unit": "hours",
+            "cost_inr": 12000,
+            "serves": "backend",
+            "desc": "Serverless Node.js environment for handling API requests"
+        },
+        {
+            "month": "2024-07",
+            "service": "Object Storage",
+            "resource_id": "s3-abcde",
+            "region": "us-east-1",
+            "usage_type": "GB",
+            "usage_quantity": 100,
+            "unit": "GB",
+            "cost_inr": 5000,
+            "serves": "image_storage",
+            "desc": "Object storage for storing images of menu items"
+        },
+        {
+            "month": "2024-07",
+            "service": "Basic Analytics",
+            "resource_id": "ga-xyz",
+            "region": "us-east-1",
+            "usage_type": "events",
+            "usage_quantity": 100000,
+            "unit": "events",
+            "cost_inr": 3000,
+            "serves": "analytics",
+            "desc": "Basic analytics for tracking user behavior and app performance"
+        },
+        {
+            "month": "2024-07",
+            "service": "Logging",
+            "resource_id": "log-123",
+            "region": "us-east-1",
+            "usage_type": "GB",
+            "usage_quantity": 10,
+            "unit": "GB",
+            "cost_inr": 1000,
+            "serves": "logging",
+            "desc": "Centralized logging for monitoring app performance and errors"
+        },
+        {
+            "month": "2024-07",
+            "service": "Load Balancing",
+            "resource_id": "lb-456",
+            "region": "us-east-1",
+            "usage_type": "hours",
+            "usage_quantity": 720,
+            "unit": "hours",
+            "cost_inr": 2000,
+            "serves": "load_balancing",
+            "desc": "Load balancing for distributing traffic across multiple instances"
+        }
+    ],
+    "analysis": {
+        "budget": 50000,
+        "total_cost": 38000,
+        "service_costs": {
+            "PostgreSQL": 15000,
+            "Node.js": 12000,
+            "Object Storage": 5000,
+            "Basic Analytics": 3000,
+            "Logging": 1000,
+            "Load Balancing": 2000
+        },
+        "is_over_budget": false
+    },
+    "recommendations": {
+        "project_name": "Food Delivery App",
+        "analysis": {
+            "total_monthly_cost": 38000,
+            "budget": 50000,
+            "budget_variance": 2000,
+            "service_costs": {
+                "PostgreSQL": 15000,
+                "Node.js": 12000,
+                "Object Storage": 5000,
+                "Basic Analytics": 3000,
+                "Logging": 1000,
+                "Load Balancing": 2000
+            },
+            "high_cost_services": {
+                "PostgreSQL": 15000
+            },
+            "is_over_budget": false
+        },
+        "recommendations": [
+            {
+                "title": "Migrate PostgreSQL to Open-source",
+                "service": "PostgreSQL",
+                "current_cost": 15000,
+                "potential_savings": 6000,
+                "recommendation_type": "open_source",
+                "description": "Migrate PostgreSQL to an open-source alternative like PostgreSQL Community Server.",
+                "implementation_effort": "medium",
+                "risk_level": "low",
+                "steps": [
+                    "Assess the current PostgreSQL setup and identify potential issues.",
+                    "Migrate the database to the open-source alternative.",
+                    "Test and validate the migration."
+                ],
+                "cloud_providers": [
+                    "AWS",
+                    "Azure",
+                    "GCP"
+                ]
+            },
+            {
+                "title": "Right-size Node.js",
+                "service": "Node.js",
+                "current_cost": 12000,
+                "potential_savings": 3000,
+                "recommendation_type": "right_sizing",
+                "description": "Right-size the Node.js environment by optimizing instance types and scaling.",
+                "implementation_effort": "low",
+                "risk_level": "low",
+                "steps": [
+                    "Assess the current Node.js setup and identify potential areas for optimization.",
+                    "Right-size the instance types and scaling.",
+                    "Test and validate the changes."
+                ],
+                "cloud_providers": [
+                    "AWS",
+                    "Azure",
+                    "GCP"
+                ]
+            },
+            {
+                "title": "Use OpenText for Image Storage",
+                "service": "Object Storage",
+                "current_cost": 5000,
+                "potential_savings": 2000,
+                "recommendation_type": "alternative_provider",
+                "description": "Use OpenText for image storage instead of object storage.",
+                "implementation_effort": "medium",
+                "risk_level": "low",
+                "steps": [
+                    "Assess the current object storage setup and identify potential issues.",
+                    "Migrate the image storage to OpenText.",
+                    "Test and validate the migration."
+                ],
+                "cloud_providers": [
+                    "AWS",
+                    "Azure",
+                    "GCP"
+                ]
+            },
+            {
+                "title": "Optimize Basic Analytics",
+                "service": "Basic Analytics",
+                "current_cost": 3000,
+                "potential_savings": 1000,
+                "recommendation_type": "optimization",
+                "description": "Optimize the basic analytics setup by reducing data retention and sampling.",
+                "implementation_effort": "low",
+                "risk_level": "low",
+                "steps": [
+                    "Assess the current analytics setup and identify potential areas for optimization.",
+                    "Reduce data retention and sampling.",
+                    "Test and validate the changes."
+                ],
+                "cloud_providers": [
+                    "AWS",
+                    "Azure",
+                    "GCP"
+                ]
+            },
+            {
+                "title": "Use Free Tier for Logging",
+                "service": "Logging",
+                "current_cost": 1000,
+                "potential_savings": 1000,
+                "recommendation_type": "free_tier",
+                "description": "Use the free tier for logging instead of paying for it.",
+                "implementation_effort": "low",
+                "risk_level": "low",
+                "steps": [
+                    "Assess the current logging setup and identify potential areas for cost reduction.",
+                    "Switch to the free tier for logging.",
+                    "Test and validate the changes."
+                ],
+                "cloud_providers": [
+                    "AWS",
+                    "Azure",
+                    "GCP"
+                ]
+            },
+            {
+                "title": "Migrate Load Balancing to Open-source",
+                "service": "Load Balancing",
+                "current_cost": 2000,
+                "potential_savings": 1000,
+                "recommendation_type": "open_source",
+                "description": "Migrate load balancing to an open-source alternative like HAProxy.",
+                "implementation_effort": "medium",
+                "risk_level": "low",
+                "steps": [
+                    "Assess the current load balancing setup and identify potential issues.",
+                    "Migrate the load balancing to the open-source alternative.",
+                    "Test and validate the migration."
+                ],
+                "cloud_providers": [
+                    "AWS",
+                    "Azure",
+                    "GCP"
+                ]
+            },
+            {
+                "title": "Use Open-source for Image Storage",
+                "service": "Object Storage",
+                "current_cost": 5000,
+                "potential_savings": 2000,
+                "recommendation_type": "open_source",
+                "description": "Use an open-source alternative like MinIO for image storage.",
+                "implementation_effort": "medium",
+                "risk_level": "low",
+                "steps": [
+                    "Assess the current object storage setup and identify potential issues.",
+                    "Migrate the image storage to the open-source alternative.",
+                    "Test and validate the migration."
+                ],
+                "cloud_providers": [
+                    "AWS",
+                    "Azure",
+                    "GCP"
+                ]
+            }
+        ],
+        "summary": {
+            "total_potential_savings": 18000,
+            "savings_percentage": 47.37,
+            "recommendations_count": 7,
+            "high_impact_recommendations": 3
+        }
+    }
+}

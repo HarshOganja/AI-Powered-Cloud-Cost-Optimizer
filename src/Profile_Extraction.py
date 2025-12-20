@@ -7,7 +7,7 @@ load_dotenv()
 HF_API_KEY = os.getenv("HF_API_KEY")
 MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 API_URL = "https://router.huggingface.co/v1/chat/completions"
-file="Response_json/Profile_Extraction.json"
+file="data/output/Profile_Extraction.json"
 
 def profile_extraction(description):
     prompt = f"""You are an AI that extracts structured project metadata.

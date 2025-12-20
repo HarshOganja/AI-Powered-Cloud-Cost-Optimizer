@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cloud Cost Optimization Report</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 20px;
+}
+h1, h2, h3 {
+    color: #1f2937;
+}
+.section {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background: #eef2f7;
+}
+.good {
+    color: #047857;
+    font-weight: bold;
+}
+.bad {
+    color: #b91c1c;
+    font-weight: bold;
+}
+.card {
+    background: #f9fafb;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #2563eb;
+    border-radius: 5px;
+}
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Cloud Cost Optimization Report</h1>
+<p><strong>Generated on:</strong> 2025-12-20 17:00</p>
+
+<div class="section">
+<h2>Project Overview</h2>
+<p><strong>Project Name:</strong> Food Delivery App</p>
+<p><strong>Description:</strong> We are building a food delivery app for 10,000 users per month.</p>
+<p><strong>Monthly Budget:</strong> ₹50000</p>
+</div>
+
+<div class="section">
+<h2>Tech Stack</h2>
+<ul>
+<li><strong>backend</strong>: Node.js</li><li><strong>database</strong>: PostgreSQL</li><li><strong>image_storage</strong>: object storage</li><li><strong>monitoring</strong>: monitoring</li><li><strong>analytics</strong>: basic analytics</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Synthetic Billing Details</h2>
+<table>
+<tr>
+<th>Service</th>
+<th>Purpose</th>
+<th>Usage</th>
+<th>Region</th>
+<th>Cost (₹)</th>
+</tr>
+
+<tr>
+<td>PostgreSQL</td>
+<td>database</td>
+<td>720 hours</td>
+<td>us-east-1</td>
+<td>15000</td>
+</tr>
+
+<tr>
+<td>Node.js</td>
+<td>backend</td>
+<td>720 hours</td>
+<td>us-east-1</td>
+<td>12000</td>
+</tr>
+
+<tr>
+<td>Object Storage</td>
+<td>image_storage</td>
+<td>100 GB</td>
+<td>us-east-1</td>
+<td>5000</td>
+</tr>
+
+<tr>
+<td>Basic Analytics</td>
+<td>analytics</td>
+<td>100000 events</td>
+<td>us-east-1</td>
+<td>3000</td>
+</tr>
+
+<tr>
+<td>Logging</td>
+<td>logging</td>
+<td>10 GB</td>
+<td>us-east-1</td>
+<td>1000</td>
+</tr>
+
+<tr>
+<td>Load Balancing</td>
+<td>load_balancing</td>
+<td>720 hours</td>
+<td>us-east-1</td>
+<td>2000</td>
+</tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>Cost Summary</h2>
+<p><strong>Total Monthly Cost:</strong> ₹38000</p>
+<p><strong>Budget:</strong> ₹50000</p>
+<p><strong>Variance:</strong> ₹-12000</p>
+<p>
+<strong>Status:</strong>
+<span class="good">
+Within Budget
+</span>
+</p>
+</div>
+
+<div class="section">
+<h2>Cost Optimization Recommendations</h2>
+
+<div class="card">
+<h3>Migrate PostgreSQL to Open-source</h3>
+<p><strong>Service:</strong> PostgreSQL</p>
+<p><strong>Current Cost:</strong> ₹15000</p>
+<p><strong>Potential Savings:</strong> ₹6000</p>
+<p><strong>Type:</strong> open_source</p>
+<p><strong>Implementation Effort:</strong> medium</p>
+<p><strong>Risk Level:</strong> low</p>
+<p>Migrate PostgreSQL to an open-source alternative like PostgreSQL Community Server.</p>
+</div>
+
+<div class="card">
+<h3>Right-size Node.js</h3>
+<p><strong>Service:</strong> Node.js</p>
+<p><strong>Current Cost:</strong> ₹12000</p>
+<p><strong>Potential Savings:</strong> ₹3000</p>
+<p><strong>Type:</strong> right_sizing</p>
+<p><strong>Implementation Effort:</strong> low</p>
+<p><strong>Risk Level:</strong> low</p>
+<p>Right-size the Node.js environment by optimizing instance types and scaling.</p>
+</div>
+
+<div class="card">
+<h3>Use OpenText for Image Storage</h3>
+<p><strong>Service:</strong> Object Storage</p>
+<p><strong>Current Cost:</strong> ₹5000</p>
+<p><strong>Potential Savings:</strong> ₹2000</p>
+<p><strong>Type:</strong> alternative_provider</p>
+<p><strong>Implementation Effort:</strong> medium</p>
+<p><strong>Risk Level:</strong> low</p>
+<p>Use OpenText for image storage instead of object storage.</p>
+</div>
+
+<div class="card">
+<h3>Optimize Basic Analytics</h3>
+<p><strong>Service:</strong> Basic Analytics</p>
+<p><strong>Current Cost:</strong> ₹3000</p>
+<p><strong>Potential Savings:</strong> ₹1000</p>
+<p><strong>Type:</strong> optimization</p>
+<p><strong>Implementation Effort:</strong> low</p>
+<p><strong>Risk Level:</strong> low</p>
+<p>Optimize the basic analytics setup by reducing data retention and sampling.</p>
+</div>
+
+<div class="card">
+<h3>Use Free Tier for Logging</h3>
+<p><strong>Service:</strong> Logging</p>
+<p><strong>Current Cost:</strong> ₹1000</p>
+<p><strong>Potential Savings:</strong> ₹1000</p>
+<p><strong>Type:</strong> free_tier</p>
+<p><strong>Implementation Effort:</strong> low</p>
+<p><strong>Risk Level:</strong> low</p>
+<p>Use the free tier for logging instead of paying for it.</p>
+</div>
+
+<div class="card">
+<h3>Migrate Load Balancing to Open-source</h3>
+<p><strong>Service:</strong> Load Balancing</p>
+<p><strong>Current Cost:</strong> ₹2000</p>
+<p><strong>Potential Savings:</strong> ₹1000</p>
+<p><strong>Type:</strong> open_source</p>
+<p><strong>Implementation Effort:</strong> medium</p>
+<p><strong>Risk Level:</strong> low</p>
+<p>Migrate load balancing to an open-source alternative like HAProxy.</p>
+</div>
+
+<div class="card">
+<h3>Use Open-source for Image Storage</h3>
+<p><strong>Service:</strong> Object Storage</p>
+<p><strong>Current Cost:</strong> ₹5000</p>
+<p><strong>Potential Savings:</strong> ₹2000</p>
+<p><strong>Type:</strong> open_source</p>
+<p><strong>Implementation Effort:</strong> medium</p>
+<p><strong>Risk Level:</strong> low</p>
+<p>Use an open-source alternative like MinIO for image storage.</p>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Final Summary</h2>
+<ul>
+<li><strong>Total Services Analyzed:</strong> 6</li>
+<li><strong>Total Recommendations:</strong> 7</li>
+<li><strong>Total Potential Savings:</strong> ₹18000</li>
+<li><strong>Savings Percentage:</strong> 47.37%</li>
+</ul>
+
+<p>
+<strong>Overall Outcome:</strong>
+<span class="good">
+Cost Optimized
+</span>
+</p>
+</div>
+
+<div class="footer">
+<p>© 2025 OpenText — AI-Powered Cloud Cost Optimizer</p>
+</div>
+
+</body>
+</html>

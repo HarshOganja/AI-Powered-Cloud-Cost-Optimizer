@@ -1,8 +1,11 @@
 import json
-from Profile_Extraction import profile_extraction
-from Bill_Genration import generate_synthetic_billing
-from Recommendation import generate_llm_recommendations
+from src.Profile_Extraction import profile_extraction
+from src.Bill_Genration import generate_synthetic_billing
+from src.Recommendation import generate_llm_recommendations
+from src.Html_Report import export_html_report
 import os
+
+
 def Enter_Description():
     print("Enter your Project Description (press Enter twice to submit):")
     lines = []
@@ -13,6 +16,8 @@ def Enter_Description():
         lines.append(line)
     description = "\n".join(lines)
     return description
+
+
 def Profile_Extraction():
     description = Enter_Description()
     try:
@@ -23,6 +28,8 @@ def Profile_Extraction():
     except Exception as e:
         print("\nERROR in Profile Extraction:", e)
         return None
+    
+    
 def Bill_Genration(project_profile):
     try:
         billing_records = generate_synthetic_billing(project_profile)
@@ -32,16 +39,22 @@ def Bill_Genration(project_profile):
     except Exception as e:
         print("\nERROR in Bill Generation:", e)
         return None
-def cost_analysis(billing_records):
+    
+    
+def cost_analysis(billing_records,project_profile ):
     total_cost = sum(r["cost_inr"] for r in billing_records)
     service_costs = {r["service"]: r["cost_inr"] for r in billing_records}
     analysis = {
+        "budget": project_profile["budget_inr_per_month"],
         "total_cost": total_cost,
-        "service_costs": service_costs
+        "service_costs": service_costs,
+        "is_over_budget": total_cost > project_profile["budget_inr_per_month"]
     }
     print("\n=== Cost Analysis ===")
     print(json.dumps(analysis, indent=4))
     return analysis 
+
+
 def Recommendation(project_profile, billing_records, cost_analysis):
     try:
         recommend=generate_llm_recommendations(project_profile,billing_records,cost_analysis)
@@ -52,6 +65,7 @@ def Recommendation(project_profile, billing_records, cost_analysis):
         print("\nERROR in Recommendation Generation:", e)
         return None
 
+
 def main():
     while True:
         print("""
@@ -59,7 +73,7 @@ def main():
 1. Enter new project description and extract profile
 2. Generate synthetic billing and cost analysis
 3. Generate optimization recommendations
-4. Export full report (JSON)
+4. Export full report as JSON and HTML
 5. Exit
 ======================================================
 """)
@@ -72,7 +86,8 @@ def main():
                 continue
             billing_records = Bill_Genration(project_profile)
             if billing_records:
-                cost_analysis_data = cost_analysis(billing_records)
+                cost_analysis_data = cost_analysis(billing_records,project_profile)
+                
         elif input_choice == "3":
             if 'project_profile' not in locals() or project_profile is None:
                 print("\nPlease extract project profile first (Option 1).")
@@ -91,20 +106,25 @@ def main():
             if 'recommend' not in locals() or recommend is None:
                 print("\nPlease generate recommendations first (Option 3).")
                 continue
-            full_report = {
-                "project_profile": project_profile,
-                "billing_records": billing_records,
-                "cost_analysis": cost_analysis_data,
+            final_report = {
+            "project_profile": project_profile,
+                "billing": billing_records,
+                "analysis": cost_analysis_data,
                 "recommendations": recommend
             }
-            File="Response_json/Full_Report.json"
-            if os.path.exists(File):
-                os.remove(File)
-            with open(File, 'w') as f:
-                json.dump(full_report, f, indent=4)
-            print("\n=== FULL REPORT JSON ===")
-            print(json.dumps(full_report, indent=4))
+            json_path = f"data/output/cost_optimization_report.json"
+            html_path = f"data/output/cost_optimization_report.html"
+
+            with open(json_path, "w") as f:
+                json.dump(final_report, f, indent=4)
+
+            export_html_report(final_report, html_path)
+
+            print("JSON report exported")
+            print("HTML report exported")
         elif input_choice == "5":
             print("Exiting Cloud Cost Optimizer. Goodbye!")
             break
+        else:
+            print("\n\n\nInvalid choice. Please select a valid option (1-5).\n\n")
 main()

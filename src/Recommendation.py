@@ -6,7 +6,7 @@ import json
 HF_API_KEY = os.getenv("HF_API_KEY")
 MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 API_URL = "https://router.huggingface.co/v1/chat/completions"
-file="Response_json/Recommendation.json"
+file="data/output/Recommendation.json"
 def generate_llm_recommendations(project_profile, billing_records, cost_analysis):
     prompt = f"""
 You are an AI system that generates CLOUD COST OPTIMIZATION RECOMMENDATIONS.
