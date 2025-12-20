@@ -1,11 +1,11 @@
 import json
 import os
 import requests
-from dotenv import load_dotenv
 
-load_dotenv()
 file="data/output/Billing_Generation.json"
 HF_API_KEY = os.getenv("HF_API_KEY")
+if not HF_API_KEY:
+    raise RuntimeError("HF_API_KEY not found in environment")
 MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 API_URL = "https://router.huggingface.co/v1/chat/completions"
 

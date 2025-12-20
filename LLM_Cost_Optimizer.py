@@ -1,13 +1,14 @@
 import json
+from dotenv import load_dotenv
+load_dotenv()
 from src.Profile_Extraction import profile_extraction
 from src.Bill_Genration import generate_synthetic_billing
 from src.Recommendation import generate_llm_recommendations
 from src.Html_Report import export_html_report
 import os
 
-
 def Enter_Description():
-    print("Enter your Project Description (press Enter twice to submit):")
+    print("\nEnter your Project Description (press Enter twice to submit):")
     lines = []
     while True:
         line = input()

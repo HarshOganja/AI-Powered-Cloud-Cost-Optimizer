@@ -4,6 +4,8 @@ import json
 
 
 HF_API_KEY = os.getenv("HF_API_KEY")
+if not HF_API_KEY:
+    raise RuntimeError("HF_API_KEY not found in environment")
 MODEL_ID = "meta-llama/Meta-Llama-3-8B-Instruct"
 API_URL = "https://router.huggingface.co/v1/chat/completions"
 file="data/output/Recommendation.json"
